@@ -89,9 +89,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "SnowSea & ShoFirm Foods Limited" },
       { name: "theme-color", content: "#0B2341" },
       { property: "og:title", content: "SnowSea & ShoFirm Foods — Premium Nigerian Foods" },
-      { property: "og:description", content: "Premium Nigerian foods, crafted with quality, delivered with trust." },
+      { property: "og:description", content: "Premium swallow flours, staple foods and organically smoked catfish. Hygienically processed, nationwide delivery. Food you can trust." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "SnowSea & ShoFirm Foods — Premium Nigerian Foods" },
+      { name: "twitter:description", content: "Premium swallow flours, staple foods and organically smoked catfish. Hygienically processed, nationwide delivery. Food you can trust." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/44f88ed8-d85e-4d29-8b4a-9d6a01c948da/id-preview-3403422e--64eee8da-922a-47be-afbe-3507673e03ff.lovable.app-1782826722836.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/44f88ed8-d85e-4d29-8b4a-9d6a01c948da/id-preview-3403422e--64eee8da-922a-47be-afbe-3507673e03ff.lovable.app-1782826722836.png" },
     ],
     links: [
       {
