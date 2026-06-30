@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CartDrawer } from "@/components/layout/CartDrawer";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { CartProvider } from "@/lib/cart";
 import { SmoothScroll } from "@/lib/smooth-scroll";
 import { useRouterState } from "@tanstack/react-router";
@@ -134,6 +135,7 @@ function RootComponent() {
           </main>
           {!hideChrome && <Footer />}
           <CartDrawer />
+          {!hideChrome && <WhatsAppButton />}
         </SmoothScroll>
       </CartProvider>
     </QueryClientProvider>
