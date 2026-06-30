@@ -1,29 +1,38 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Hero } from "@/components/home/Hero";
+import { Story } from "@/components/home/Story";
+import { Collections } from "@/components/home/Collections";
+import { WhyUs } from "@/components/home/WhyUs";
+import { Process } from "@/components/home/Process";
+import { Catfish } from "@/components/home/Catfish";
+import { Serve } from "@/components/home/Serve";
+import { Testimonials } from "@/components/home/Testimonials";
+import { CTA } from "@/components/home/CTA";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "SnowSea & ShoFirm Foods — Premium Nigerian Foods Online" },
+      { name: "description", content: "Premium swallow flours, staple foods, baby food and organically smoked catfish. Order online, delivered nationwide. Food you can trust." },
+      { property: "og:title", content: "SnowSea & ShoFirm Foods — Premium Nigerian Foods" },
+      { property: "og:description", content: "Crafted with quality. Delivered with trust. Nationwide." },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Hero />
+      <Story />
+      <Collections />
+      <WhyUs />
+      <Process />
+      <Catfish />
+      <Serve />
+      <Testimonials />
+      <CTA />
+    </>
   );
 }
