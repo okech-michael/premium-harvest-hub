@@ -7,8 +7,8 @@ type ServerEntry = {
 };
 
 const initServerEntry = async (): Promise<ServerEntry> => {
-  const module = await serverEntry;
-  return (module.default ?? module) as ServerEntry;
+  const mod = (await serverEntry) as any;
+  return (mod?.default ?? mod) as ServerEntry;
 };
 
 const normalizeCatastrophicSsrResponse = async (response: Response): Promise<Response> => {
