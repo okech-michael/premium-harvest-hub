@@ -12,9 +12,9 @@ import { CTA } from "@/components/home/CTA";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SnowSea & ShoFirm Foods — Premium Nigerian Foods Online" },
+      { title: "SnowSea & ShoFirm Foods - Premium Nigerian Foods Online" },
       { name: "description", content: "Premium swallow flours, staple foods, baby food and organically smoked catfish. Order online, delivered nationwide. Food you can trust." },
-      { property: "og:title", content: "SnowSea & ShoFirm Foods — Premium Nigerian Foods" },
+      { property: "og:title", content: "SnowSea & ShoFirm Foods - Premium Nigerian Foods" },
       { property: "og:description", content: "Crafted with quality. Delivered with trust. Nationwide." },
     ],
   }),

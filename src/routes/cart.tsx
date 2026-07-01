@@ -4,7 +4,7 @@ import { useCart } from "@/lib/cart";
 import { formatNaira } from "@/lib/products";
 
 export const Route = createFileRoute("/cart")({
-  head: () => ({ meta: [{ title: "Your Cart — SnowSea & ShoFirm Foods" }] }),
+  head: () => ({ meta: [{ title: "Your Cart - SnowSea & ShoFirm Foods" }] }),
   component: CartPage,
 });
 

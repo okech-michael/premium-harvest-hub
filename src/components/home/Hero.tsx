@@ -66,7 +66,7 @@ export function Hero() {
           transition={{ delay: 0.95, duration: 0.8 }}
           className="mt-8 text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed text-pretty"
         >
-          From premium swallow flours and staple foods to organically smoked catfish — safe, nutritious, hygienically processed foods trusted by families, retailers, and distributors across Nigeria.
+          From premium swallow flours and staple foods to organically smoked catfish - safe, nutritious, hygienically processed foods trusted by families, retailers, and distributors across Nigeria.
         </motion.p>
 
         <motion.div

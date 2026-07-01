@@ -8,9 +8,9 @@ import packagingImg from "@/assets/packaging.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Our Story — SnowSea & ShoFirm Foods Limited" },
+      { title: "Our Story - SnowSea & ShoFirm Foods Limited" },
       { name: "description", content: "The story, mission, and food safety standards behind Nigeria's premium food manufacturer." },
-      { property: "og:title", content: "Our Story — SnowSea & ShoFirm Foods" },
+      { property: "og:title", content: "Our Story - SnowSea & ShoFirm Foods" },
     ],
   }),
   component: AboutPage,
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/about")({
 
 const values = [
   { t: "Quality first", d: "We refuse to ship a product we wouldn't serve our own family." },
-  { t: "Hygiene always", d: "Every facility, every batch, every shift — without compromise." },
+  { t: "Hygiene always", d: "Every facility, every batch, every shift - without compromise." },
   { t: "Honest sourcing", d: "Direct partnerships with farmers we know and trust." },
   { t: "Community", d: "Nigerian foods, made by Nigerians, for the world." },
 ];
@@ -29,7 +29,7 @@ function AboutPage() {
       <PageHeader
         eyebrow="Our Story"
         title={<>Food families <span className="italic text-gold/90">can trust.</span></>}
-        lede="SnowSea & ShoFirm Foods Limited is a modern Nigerian food manufacturer built on a single promise — that the staples that nourish our homes deserve world-class care."
+        lede="SnowSea & ShoFirm Foods Limited is a modern Nigerian food manufacturer built on a single promise - that the staples that nourish our homes deserve world-class care."
       />
 
       <section className="py-24 lg:py-32 bg-background">
@@ -38,7 +38,7 @@ function AboutPage() {
             <div className="text-[11px] tracking-[0.3em] uppercase text-gold font-semibold mb-4">Our Mission</div>
             <h2 className="font-display font-extrabold text-navy text-4xl lg:text-5xl leading-tight">To set a new standard for Nigerian food manufacturing.</h2>
             <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-              Our mission is to make premium, hygienically processed Nigerian staples accessible to every family, restaurant and retailer — without compromise on quality, safety or value.
+              Our mission is to make premium, hygienically processed Nigerian staples accessible to every family, restaurant and retailer - without compromise on quality, safety or value.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
               We pair generations of culinary wisdom with modern food science, equipping every batch with the consistency, safety, and care our customers deserve.

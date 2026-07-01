@@ -48,7 +48,7 @@ export function Catfish() {
             transition={{ duration: 0.9, delay: 0.1 }}
             className="mt-8 text-white/75 text-lg leading-relaxed max-w-lg"
           >
-            We don't take shortcuts with catfish. Every fish is hand-selected, naturally cured, and slow-smoked over hardwood — never chemically treated. The result is a deep, rich flavour and a clean conscience.
+            We don't take shortcuts with catfish. Every fish is hand-selected, naturally cured, and slow-smoked over hardwood - never chemically treated. The result is a deep, rich flavour and a clean conscience.
           </motion.p>
           <motion.ul
             initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}

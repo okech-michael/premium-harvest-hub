@@ -26,7 +26,7 @@ const images = [
 ];
 
 export const Route = createFileRoute("/gallery")({
-  head: () => ({ meta: [{ title: "Gallery — SnowSea & ShoFirm Foods" }, { name: "description", content: "A look inside our facility, packaging, products and the families we serve." }] }),
+  head: () => ({ meta: [{ title: "Gallery - SnowSea & ShoFirm Foods" }, { name: "description", content: "A look inside our facility, packaging, products and the families we serve." }] }),
   component: GalleryPage,
 });
 

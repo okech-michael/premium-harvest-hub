@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/PageHeader";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — SnowSea & ShoFirm Foods" },
+      { title: "Contact - SnowSea & ShoFirm Foods" },
       { name: "description", content: "Get in touch about wholesale, distribution or general enquiries. We respond within one business day." },
     ],
   }),
@@ -18,7 +18,7 @@ function ContactPage() {
       <PageHeader
         eyebrow="Contact"
         title={<>Let's talk about <span className="italic text-gold/90">your order.</span></>}
-        lede="Whether you're a household, restaurant, supermarket or distributor — we'd love to hear from you."
+        lede="Whether you're a household, restaurant, supermarket or distributor - we'd love to hear from you."
       />
       <section className="pb-24 lg:pb-32 bg-background">
         <div className="mx-auto max-w-6xl px-6 lg:px-10 grid lg:grid-cols-[1fr_400px] gap-10">

@@ -10,9 +10,9 @@ import { PageHeader } from "@/components/PageHeader";
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "Shop Premium Nigerian Foods — SnowSea & ShoFirm" },
+      { title: "Shop Premium Nigerian Foods - SnowSea & ShoFirm" },
       { name: "description", content: "Browse our premium catalogue: swallow flours, garri, smoked catfish, baby food and more. Nationwide delivery." },
-      { property: "og:title", content: "Shop — SnowSea & ShoFirm Foods" },
+      { property: "og:title", content: "Shop - SnowSea & ShoFirm Foods" },
     ],
   }),
   loader: ({ context }) => context.queryClient.ensureQueryData(productsQuery),

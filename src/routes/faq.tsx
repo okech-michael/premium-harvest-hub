@@ -5,15 +5,15 @@ import { Plus, Minus } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 
 export const Route = createFileRoute("/faq")({
-  head: () => ({ meta: [{ title: "FAQ — SnowSea & ShoFirm Foods" }, { name: "description", content: "Answers to common questions about delivery, wholesale, food safety and orders." }] }),
+  head: () => ({ meta: [{ title: "FAQ - SnowSea & ShoFirm Foods" }, { name: "description", content: "Answers to common questions about delivery, wholesale, food safety and orders." }] }),
   component: FAQPage,
 });
 
 const faqs = [
-  { q: "Do I need to create an account to order?", a: "No. Ordering is completely account-free — just add items to your cart and provide your delivery details at checkout." },
+  { q: "Do I need to create an account to order?", a: "No. Ordering is completely account-free - just add items to your cart and provide your delivery details at checkout." },
   { q: "Where do you deliver?", a: "We deliver to all 36 states of Nigeria including the FCT. Delivery times and fees vary by location and are confirmed by our team after you place your order." },
   { q: "How long does delivery take?", a: "Lagos orders: 1–2 business days. Other major cities: 2–4 business days. Remote locations may take longer. Wholesale shipments are scheduled separately." },
-  { q: "How is the smoked catfish processed?", a: "Our catfish is hand-selected, naturally cured, and slow-smoked over hardwood. No chemicals, no preservatives — just clean, traditional smoking." },
+  { q: "How is the smoked catfish processed?", a: "Our catfish is hand-selected, naturally cured, and slow-smoked over hardwood. No chemicals, no preservatives - just clean, traditional smoking." },
   { q: "Do you offer wholesale or distributor pricing?", a: "Yes. Reach out via our contact page or WhatsApp with the products and quantities you're interested in, and we'll send a tailored quote." },
   { q: "How are products packaged?", a: "Flours and staples come in sealed, resealable packs. Smoked catfish is vacuum-sealed for maximum freshness and shelf life." },
   { q: "What's your return policy?", a: "If a product arrives damaged or below the quality we promise, contact us within 48 hours of delivery and we'll replace it." },

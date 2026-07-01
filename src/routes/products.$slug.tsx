@@ -17,7 +17,7 @@ export const Route = createFileRoute("/products/$slug")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.name} — SnowSea & ShoFirm Foods` },
+          { title: `${loaderData.name} - SnowSea & ShoFirm Foods` },
           { name: "description", content: loaderData.short_description },
           { property: "og:title", content: loaderData.name },
           { property: "og:description", content: loaderData.short_description },
@@ -132,7 +132,7 @@ function ProductPage() {
                   }
                   className="mt-6 w-full h-14 rounded-full bg-gold text-navy font-medium inline-flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-[var(--shadow-gold)] transition-all"
                 >
-                  <ShoppingBag className="h-4 w-4" /> Add to Cart — {formatNaira(size.price * qty)}
+                  <ShoppingBag className="h-4 w-4" /> Add to Cart - {formatNaira(size.price * qty)}
                 </button>
               </div>
             </motion.div>

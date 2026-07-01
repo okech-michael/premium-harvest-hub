@@ -7,7 +7,7 @@ const items = [
   { icon: Factory, title: "Modern Manufacturing", text: "Stainless-steel processing lines built for consistency at scale." },
   { icon: Truck, title: "Nationwide Distribution", text: "Reliable logistics serving homes and businesses across all 36 states." },
   { icon: Leaf, title: "Organic Processing", text: "Chemical-free smoke curing and natural preservation techniques." },
-  { icon: Tag, title: "Honest Pricing", text: "Premium quality without the premium markup — fair pricing always." },
+  { icon: Tag, title: "Honest Pricing", text: "Premium quality without the premium markup - fair pricing always." },
   { icon: Award, title: "Customer Satisfaction", text: "Trusted by thousands of households, restaurants and supermarkets." },
   { icon: Boxes, title: "Wholesale Supply", text: "Reliable bulk supply for retailers, restaurants and distributors." },
 ];

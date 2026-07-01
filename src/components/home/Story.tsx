@@ -48,7 +48,7 @@ export function Story() {
             className="mt-8 space-y-5 text-muted-foreground text-lg leading-relaxed text-pretty max-w-xl"
           >
             <p>
-              SnowSea & ShoFirm Foods Limited was born from a simple belief — that the staples that nourish Nigerian homes deserve world-class care, from raw material to kitchen table.
+              SnowSea & ShoFirm Foods Limited was born from a simple belief - that the staples that nourish Nigerian homes deserve world-class care, from raw material to kitchen table.
             </p>
             <p>
               Today we craft premium swallow flours, staple foods and organically smoked catfish in modern, hygienic facilities. Every batch is inspected, packaged, and delivered with the kind of attention you'd expect from a brand built for the next generation.

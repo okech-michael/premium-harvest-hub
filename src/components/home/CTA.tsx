@@ -22,7 +22,7 @@ export function CTA() {
             <span className="italic text-gold">you can trust.</span>
           </h2>
           <p className="mt-8 text-white/70 text-lg max-w-xl mx-auto">
-            Browse the catalogue, place an order in minutes — no account required. We'll deliver nationwide.
+            Browse the catalogue, place an order in minutes - no account required. We'll deliver nationwide.
           </p>
           <div className="mt-12 flex flex-wrap justify-center gap-3">
             <Link to="/products" className="group inline-flex h-14 items-center gap-3 px-8 rounded-full bg-gold text-navy font-medium shadow-[var(--shadow-gold)] hover:-translate-y-0.5 transition-all">

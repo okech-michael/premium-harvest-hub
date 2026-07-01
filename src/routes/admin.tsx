@@ -8,7 +8,7 @@ import { listOrders, updateOrderStatus } from "@/lib/orders.functions";
 import { formatNaira } from "@/lib/products";
 
 export const Route = createFileRoute("/admin")({
-  head: () => ({ meta: [{ title: "Orders — SnowSea Admin" }] }),
+  head: () => ({ meta: [{ title: "Orders - SnowSea Admin" }] }),
   component: AdminPage,
 });
 
@@ -81,7 +81,7 @@ function AdminPage() {
                 <ul className="border-t border-border/40 pt-4 space-y-2">
                   {(o.order_items as Array<{ id: string; product_name: string; size_label: string | null; quantity: number; line_total: number }>).map((i) => (
                     <li key={i.id} className="flex justify-between text-sm">
-                      <span>{i.product_name} {i.size_label ? `· ${i.size_label}` : ""} × {i.quantity}</span>
+                      <span>{i.product_name} {i.size_label ? `· ${i.size_label}` : ""} �- {i.quantity}</span>
                       <span className="font-medium">{formatNaira(Number(i.line_total))}</span>
                     </li>
                   ))}
