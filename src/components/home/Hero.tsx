@@ -26,7 +26,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-navy/40 via-navy/30 to-navy/90" />
       <div className="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/20 to-transparent" />
 
-      <motion.div style={{ y, opacity }} className="relative z-10 h-full mx-auto max-w-7xl px-6 lg:px-10 flex flex-col justify-end pb-24 pt-32">
+      <motion.div style={{ y, opacity }} className="relative z-10 h-full mx-auto max-w-7xl px-6 lg:px-10 flex flex-col justify-start pt-36 md:pt-44 lg:pt-48 pb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export function Hero() {
           <span className="text-[11px] tracking-[0.3em] uppercase text-white/90 font-medium">Food You Can Trust</span>
         </motion.div>
 
-        <h1 className="font-display font-extrabold text-white text-balance leading-[0.95] tracking-[-0.03em] text-[clamp(2.5rem,7vw,6.5rem)] max-w-5xl">
+        <h1 className="font-display font-extrabold text-white leading-[1.05] md:leading-[1.1] tracking-[-0.03em] text-[clamp(2.5rem,6vw,5.5rem)] max-w-full sm:max-w-3xl lg:max-w-5xl break-words">
           {["Premium", "Nigerian", "Foods"].map((w, i) => (
             <motion.span
               key={w}
@@ -54,7 +54,7 @@ export function Hero() {
             initial={{ y: 60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-block bg-gradient-to-r from-[oklch(0.88_0.13_85)] via-gold to-[oklch(0.68_0.17_70)] bg-clip-text text-transparent italic font-display"
+            className="block mt-4 bg-gradient-to-r from-[oklch(0.88_0.13_85)] via-gold to-[oklch(0.68_0.17_70)] bg-clip-text text-transparent italic font-display"
           >
             crafted with quality.
           </motion.span>
@@ -64,7 +64,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.95, duration: 0.8 }}
-          className="mt-8 text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed text-pretty"
+          className="mt-8 text-white/80 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed text-pretty"
         >
           From premium swallow flours and staple foods to organically smoked catfish - safe, nutritious, hygienically processed foods trusted by families, retailers, and distributors across Nigeria.
         </motion.p>
