@@ -7,8 +7,8 @@ type ServerEntry = {
 };
 
 const initServerEntry = async (): Promise<ServerEntry> => {
-  const mod = (await serverEntry) as any;
-  return (mod?.default ?? mod) as ServerEntry;
+  const mod = await import("@tanstack/react-start/server-entry").then((m) => (m.default ?? m) as any);
+  return mod as ServerEntry;
 };
 
 const normalizeCatastrophicSsrResponse = async (response: Response): Promise<Response> => {
