@@ -85,7 +85,18 @@ export default async function handler(request: Request, env: unknown, ctx: unkno
       console.warn("Failed to normalize request URL:", e);
     }
 
-    const response = await entry.fetch(reqToUse, env, ctx);
+    let response: Response;
+    try {
+      response = await entry.fetch(reqToUse, env, ctx);
+    } catch (err: any) {
+      // Protect against runtimes that provide path-only URLs (e.g. "/")
+      if (err && (err.code === "ERR_INVALID_URL" || String(err).includes("Invalid URL"))) {
+        console.warn("Server entry failed due to invalid URL in request; returning error page.", err);
+        return new Response(renderErrorPage(), { status: 500, headers: { "content-type": "text/html; charset=utf-8" } });
+      }
+      throw err;
+    }
+
     return await normalizeCatastrophicSsrResponse(response);
   } catch (error) {
     console.error(error);
