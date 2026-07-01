@@ -65,7 +65,27 @@ const normalizeCatastrophicSsrResponse = async (response: Response): Promise<Res
 export default async function handler(request: Request, env: unknown, ctx: unknown) {
   try {
     const entry = await initServerEntry();
-    const response = await entry.fetch(request, env, ctx);
+
+    // Ensure the Request.url is an absolute URL; some runtimes provide only a path.
+    let reqToUse = request;
+    try {
+      if (!/^https?:\/\//i.test(String(request.url))) {
+        const proto = request.headers?.get?.("x-forwarded-proto") ?? "https";
+        const host = request.headers?.get?.("host") ?? "localhost";
+        const absolute = new URL(String(request.url), `${proto}://${host}`).toString();
+        const init: RequestInit = {
+          method: request.method,
+          headers: request.headers,
+          body: request.body,
+        } as any;
+        reqToUse = new Request(absolute, init);
+      }
+    } catch (e) {
+      // If normalizing the URL fails, log and continue with original request.
+      console.warn("Failed to normalize request URL:", e);
+    }
+
+    const response = await entry.fetch(reqToUse, env, ctx);
     return await normalizeCatastrophicSsrResponse(response);
   } catch (error) {
     console.error(error);

@@ -37,7 +37,7 @@ function publicClient() {
 }
 
 export const placeOrder = createServerFn({ method: "POST" })
-  .inputValidator((input: unknown) => orderSchema.parse(input))
+  .validator((input: unknown) => orderSchema.parse(input))
   .handler(async ({ data }) => {
     const subtotal = data.items.reduce((s, i) => s + i.unitPrice * i.quantity, 0);
     const delivery_fee = 0;
@@ -99,7 +99,7 @@ export const listOrders = createServerFn({ method: "GET" })
 
 export const updateOrderStatus = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((input: unknown) =>
+  .validator((input: unknown) =>
     z.object({ id: z.string().uuid(), status: z.enum(["pending", "confirmed", "shipped", "delivered", "cancelled"]) }).parse(input),
   )
   .handler(async ({ data, context }) => {
