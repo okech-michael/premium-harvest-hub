@@ -7,10 +7,9 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CartDrawer } from "@/components/layout/CartDrawer";
@@ -44,9 +43,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -94,8 +90,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "SnowSea & ShoFirm Foods — Premium Nigerian Foods" },
       { name: "twitter:description", content: "Premium swallow flours, staple foods and organically smoked catfish. Hygienically processed, nationwide delivery. Food you can trust." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/44f88ed8-d85e-4d29-8b4a-9d6a01c948da/id-preview-3403422e--64eee8da-922a-47be-afbe-3507673e03ff.lovable.app-1782826722836.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/44f88ed8-d85e-4d29-8b4a-9d6a01c948da/id-preview-3403422e--64eee8da-922a-47be-afbe-3507673e03ff.lovable.app-1782826722836.png" },
     ],
     links: [
       {
