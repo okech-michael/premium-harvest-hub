@@ -42,10 +42,10 @@ function ContactPage() {
 
           <div className="space-y-4">
             <InfoCard icon={MapPin} title="Visit us" lines={["Lagos, Nigeria", "Monday – Saturday"]} />
-            <InfoCard icon={Phone} title="Call us" lines={["+234 800 000 0000", "+234 800 000 0001"]} />
-            <InfoCard icon={Mail} title="Email" lines={["hello@snowseafoods.com", "orders@snowseafoods.com"]} />
+            <InfoCard icon={Phone} title="Call us" lines={["+2342223878"]} />
+            <InfoCard icon={Mail} title="Email" lines={["shofirmfood@gmail.com"]} />
             <InfoCard icon={Clock} title="Hours" lines={["Mon – Fri: 9am – 6pm", "Sat: 10am – 4pm"]} />
-            <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 h-14 rounded-2xl bg-[#25D366] text-white font-medium">
+            <a href="https://wa.me/2342223878" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 h-14 rounded-2xl bg-[#25D366] text-white font-medium">
               <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
             </a>
           </div>

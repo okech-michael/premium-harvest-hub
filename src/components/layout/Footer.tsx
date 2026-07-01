@@ -41,8 +41,8 @@ export function Footer() {
             <div className="text-[11px] uppercase tracking-[0.25em] text-gold/80 font-semibold mb-5">Contact</div>
             <ul className="space-y-3 text-sm text-white/70">
               <li className="flex items-start gap-2.5"><MapPin className="h-4 w-4 text-gold mt-0.5 shrink-0" /> Lagos, Nigeria</li>
-              <li className="flex items-center gap-2.5"><Phone className="h-4 w-4 text-gold shrink-0" /> +234 800 000 0000</li>
-              <li className="flex items-center gap-2.5"><Mail className="h-4 w-4 text-gold shrink-0" /> hello@snowseafoods.com</li>
+              <li className="flex items-center gap-2.5"><Phone className="h-4 w-4 text-gold shrink-0" /> +2342223878</li>
+              <li className="flex items-center gap-2.5"><Mail className="h-4 w-4 text-gold shrink-0" /> shofirmfood@gmail.com</li>
             </ul>
             <div className="flex items-center gap-2 mt-5">
               <a href="#" aria-label="Instagram" className="h-10 w-10 grid place-items-center rounded-full bg-white/5 hover:bg-gold hover:text-navy transition-colors"><Instagram className="h-4 w-4" /></a>
