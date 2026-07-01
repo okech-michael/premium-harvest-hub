@@ -31,7 +31,7 @@ export function CTA() {
             <Link to="/contact" className="inline-flex h-14 items-center gap-3 px-8 rounded-full bg-white/10 border border-white/20 text-white font-medium hover:bg-white/20 transition-all">
               Contact Us
             </Link>
-            <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer" className="inline-flex h-14 items-center gap-3 px-8 rounded-full bg-[#25D366] text-white font-medium hover:-translate-y-0.5 transition-all">
+            <a href="https://wa.me/2342223878" target="_blank" rel="noopener noreferrer" className="inline-flex h-14 items-center gap-3 px-8 rounded-full bg-[#25D366] text-white font-medium hover:-translate-y-0.5 transition-all">
               <MessageCircle className="h-4 w-4" /> WhatsApp
             </a>
           </div>
