@@ -27,6 +27,38 @@ function createSupabaseFetch(supabaseKey: string): typeof fetch {
 }
 
 
+function createMissingSupabaseClient() {
+  const message = 'Supabase is not configured for this deployment.';
+
+  return new Proxy({} as Record<string, unknown>, {
+    get(_target, prop) {
+      if (prop === 'auth') {
+        return {
+          getSession: async () => ({ data: { session: null }, error: null }),
+          onAuthStateChange: () => ({ data: { subscription: { unsubscribe() {} } } }),
+          signInWithPassword: async () => ({ data: { user: null, session: null }, error: new Error(message) }),
+          signUp: async () => ({ data: { user: null, session: null }, error: new Error(message) }),
+          signOut: async () => ({ error: new Error(message) }),
+        };
+      }
+
+      if (prop === 'from') {
+        return () => {
+          throw new Error(message);
+        };
+      }
+
+      if (prop === 'rpc') {
+        return async () => ({ data: null, error: new Error(message) });
+      }
+
+      return () => {
+        throw new Error(message);
+      };
+    },
+  });
+}
+
 function createSupabaseClient() {
   // Use import.meta.env for client-side (Vite build-time replacement)
   // Fall back to process.env for SSR (server-side rendering)
@@ -39,8 +71,8 @@ function createSupabaseClient() {
       ...(!SUPABASE_PUBLISHABLE_KEY ? ['SUPABASE_PUBLISHABLE_KEY'] : []),
     ];
     const message = `Missing Supabase environment variable(s): ${missing.join(', ')}. Please set the required environment variables.`;
-    console.error(`[Supabase] ${message}`);
-    throw new Error(message);
+    console.warn(`[Supabase] ${message}. Falling back to a disabled client.`);
+    return createMissingSupabaseClient() as ReturnType<typeof createSupabaseClient>;
   }
 
   return createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
