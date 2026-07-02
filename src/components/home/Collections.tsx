@@ -6,7 +6,11 @@ import { productsQuery } from "@/lib/products.queries";
 import { getImage } from "@/lib/products";
 
 export function Collections() {
-  const { data: products = [] } = useQuery(productsQuery);
+  const isBrowser = typeof window !== "undefined";
+  const { data: products = [] } = useQuery(productsQuery, {
+    enabled: isBrowser,
+    refetchOnWindowFocus: false,
+  });
   const grid = products.slice(0, 8);
 
   return (
