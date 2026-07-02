@@ -7,7 +7,8 @@ import { getImage } from "@/lib/products";
 
 export function Collections() {
   const isBrowser = typeof window !== "undefined";
-  const { data: products = [] } = useQuery(productsQuery, {
+  const { data: products = [] } = useQuery({
+    ...productsQuery,
     enabled: isBrowser,
     refetchOnWindowFocus: false,
   });
