@@ -79,7 +79,7 @@ const normalizeCatastrophicSsrResponse = async (response: Response): Promise<Res
   });
 };
 
-export default async function handler(request: Request, env: unknown, ctx: unknown) {
+async function handler(request: Request, env: unknown, ctx: unknown) {
   try {
     const entry = await initServerEntry();
 
@@ -121,5 +121,52 @@ export default async function handler(request: Request, env: unknown, ctx: unkno
       status: 500,
       headers: { "content-type": "text/html; charset=utf-8" },
     });
+  }
+}
+}
+
+// Vercel supports multiple function signatures depending on runtime.
+// - Edge functions use the Web `fetch` style: `export default (req: Request) => Response`
+// - Serverless (Node) functions use `(req, res) => void` and ignore return values.
+// Export both a `GET` handler (for Edge-compatible invocation) and a Node wrapper
+// as the default export so Vercel chooses the appropriate one and no warning is emitted.
+
+export async function GET(request: Request) {
+  return handler(request, undefined, undefined);
+}
+
+// Node-style wrapper for Vercel Serverless Functions
+export default async function nodeWrapper(req: any, res: any) {
+  try {
+    const proto = req.headers?.['x-forwarded-proto'] ?? 'https';
+    const host = req.headers?.host ?? 'localhost';
+    const absolute = `${proto}://${host}${req.url}`;
+    const init: RequestInit = {
+      method: req.method,
+      headers: req.headers,
+      body: req.method !== 'GET' && req.method !== 'HEAD' ? req : undefined,
+    } as any;
+    const request = new Request(absolute, init);
+    const response = await handler(request, undefined, undefined);
+
+    // write status and headers
+    res.statusCode = response.status;
+    response.headers.forEach((value, key) => {
+      // Node's setHeader expects string or string[]
+      res.setHeader(key, value as any);
+    });
+
+    // write body
+    if (response.body) {
+      const arrayBuffer = await response.arrayBuffer();
+      res.end(Buffer.from(arrayBuffer));
+    } else {
+      res.end();
+    }
+  } catch (err) {
+    console.error(err);
+    res.statusCode = 500;
+    res.setHeader('content-type', 'text/html; charset=utf-8');
+    res.end(renderErrorPage());
   }
 }
