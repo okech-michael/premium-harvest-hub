@@ -1,4 +1,4 @@
-import serverEntry from "@tanstack/react-start/server-entry";
+let serverEntry: any;
 
 function renderErrorPage(): string {
   return `<!doctype html>
@@ -40,10 +40,27 @@ type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
 };
 
-const initServerEntry = async (): Promise<ServerEntry> => {
-  const mod = await import("@tanstack/react-start/server-entry").then((m) => (m.default ?? m) as any);
-  return mod as ServerEntry;
-};
+async function initServerEntry(): Promise<ServerEntry> {
+  // Prefer the generated server bundle in production (built to `dist/server`)
+  // so that runtime imports like `#tanstack-router-entry` are resolved
+  // inside the generated assets. Fall back to the package server-entry in dev.
+  if (!serverEntry) {
+    try {
+      if (process.env.NODE_ENV === "production") {
+        const mod = await import("../dist/server/server.js").then((m) => (m.default ?? m));
+        serverEntry = mod as ServerEntry;
+      } else {
+        const mod = await import("@tanstack/react-start/server-entry").then((m) => (m.default ?? m) as any);
+        serverEntry = mod as ServerEntry;
+      }
+    } catch (e) {
+      // If the built bundle isn't available, fall back to the package entry.
+      const mod = await import("@tanstack/react-start/server-entry").then((m) => (m.default ?? m) as any);
+      serverEntry = mod as ServerEntry;
+    }
+  }
+  return serverEntry;
+}
 
 const normalizeCatastrophicSsrResponse = async (response: Response): Promise<Response> => {
   if (response.status < 500) return response;
