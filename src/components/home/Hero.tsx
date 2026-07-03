@@ -19,14 +19,14 @@ export function Hero() {
   ];
 
   return (
-    <section ref={ref} className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-navy">
+    <section ref={ref} className="relative min-h-[calc(100svh-80px)] min-h-[680px] w-full overflow-hidden bg-navy">
       <motion.div style={{ scale }} className="absolute inset-0">
         <img src={heroImg} alt="Premium Nigerian foods" className="h-full w-full object-cover" />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-b from-navy/40 via-navy/30 to-navy/90" />
       <div className="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/20 to-transparent" />
 
-      <motion.div style={{ y, opacity }} className="relative z-10 h-full mx-auto max-w-7xl px-6 lg:px-10 flex flex-col justify-start pt-36 md:pt-44 lg:pt-48 pb-24">
+      <motion.div style={{ y, opacity }} className="relative z-10 h-full mx-auto max-w-7xl px-6 lg:px-10 flex flex-col justify-start pt-16 md:pt-24 lg:pt-28 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
